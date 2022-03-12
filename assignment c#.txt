@@ -1,0 +1,308 @@
+using System;
+public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(Math.Round(12.5));
+            Console.WriteLine(Math.Round(10.5));
+        }
+    }
+output-12 
+       10
+
+2-- Accept no from user and write table as follows. For example user types 19 then output should be:
+
+19 X 1 =19
+19 X 2 = 38
+.
+.
+.
+19 X 20 = 380
+ 
+ans =
+using System;
+
+namespace _jijom
+{
+    class student
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            n = int.Parse(Console.ReadLine());
+            for(int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine("{0} X {1} ={2}",n,i,n*i);
+            }
+        }
+    }
+}
+15-  Create a class named Operation and perform below operation with proper exception handlig way:
+	a. Create  function Given a string, write a method that checks if it is a palindrome. String length may be >= 0.
+		Expected input and output
+			IsPalindromeRecursion("xx") → true
+
+			IsPalindromeRecursion("pendrive") → false
+ans--
+using System;
+
+namespace _jijom
+{
+    class student
+    {
+        public static bool Is_palidrome(string s)
+        {
+            int st = 0;
+            int en = s.Length-1;  //two pointer approach
+            while (st < en)
+            {
+                if (s[st] != s[en])
+                {
+                    return false;
+                }
+                st++;
+                en--;
+            }
+            return true;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Is_palidrome("xx"));
+            Console.WriteLine(Is_palidrome("pendrive"));
+
+        } 
+           
+        }
+    }
+16-Create a function in c# to take input from user and check if a method that returns n-th element of Fibonacci sequence using recursion.
+	
+ans--
+using System;
+
+namespace _jijom
+{
+    class student
+    {
+        public static int  Is_fibonnaci(int n)
+        {
+            if (n == 0 || n == 1)
+            {
+                return n;
+            }
+            else
+            {
+                return Is_fibonnaci(n - 1) + Is_fibonnaci(n - 2);
+            }
+        }
+        static void Main(string[] args)
+        {
+            int n;
+            n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(Is_fibonnaci(n));
+
+        } 
+           
+        }
+    }
+b.  create a static method to accept value from user and checks if year is leap.
+
+using System;
+
+namespace _jijom
+{
+    class student
+    {
+        public static bool leap(int year)
+        {
+            if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0)
+                return true;
+            return false;
+        }
+        static void Main(string[] args)
+        {
+            int n;
+            n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(leap(n));
+
+        } 
+           
+        }
+    }
+
+11. Create an array of 10 numbers and print the 3rd highest no.
+using System;
+
+namespace ppp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            n = int.Parse(Console.ReadLine());
+
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+
+            }
+            Array.Sort(arr);
+            int max = arr[0];
+            int count = 0;
+            for(int i = 0; i < n; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                    count++;
+                }
+                if (count == 2)
+                {
+                    Console.WriteLine(max);
+                }
+
+            }
+            if (count != 2)
+            {
+                Console.WriteLine("there is no third highest lement");
+            }
+
+
+                }
+    }
+}
+9. Create an string array of size 5, accept Students name using loop. Print all the member of that array.
+	Now try to add one more member at 6th position, If any exception occurs please handle it.
+ANS---
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] arr = new string[5];
+            for (int i = 0; i < 5; i++)
+            {
+                arr[i] = (Console.ReadLine());
+
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(arr[i]);
+
+            }
+            try
+            {
+                arr[arr.Length + 1] = "Anmol";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+    }
+}
+10.Create a student class and include below properties:
+	StudentID int, FullName string, CourseName string, PhoneNo string
+	
+	Accept of Student's  details 5 entries at least and print as a summary
+ANS--
+using System;
+
+namespace ConsoleApp2
+{
+    class student {
+        public int StudentID;
+        public string FullName;
+        public string CourseName;
+        public string PhoneNo;
+    }
+
+
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            student s1 = new student();
+            Console.WriteLine("enter the ID");
+          s1.StudentID=int.Parse(Console.ReadLine());
+            Console.WriteLine("enter the full name");
+            s1.FullName = Console.ReadLine();
+            Console.WriteLine("enter the course name");
+            s1.CourseName = Console.ReadLine();
+            Console.WriteLine("enter the phone no");
+            s1.PhoneNo = Console.ReadLine();
+            Console.WriteLine(s1.StudentID);
+            Console.WriteLine("your entered details is");
+            Console.WriteLine(s1.StudentID);
+            Console.WriteLine(s1.FullName);
+            Console.WriteLine(s1.CourseName);
+            Console.WriteLine(s1.PhoneNo);
+
+        }
+    }
+}
+4.Create an enum with  below values, accept value from user and using switch case show respective Day
+	Enum :Sun, Mon, Tue, Wed, Thur, Fri, Sat
+ANS--
+using System;
+
+namespace ConsoleApp2
+{
+
+
+
+    class Program
+    {
+        public enum Days
+        {
+            Sun,
+            Mon,
+            Tue,
+            Wed,
+            Thur,
+            Fri,
+            Sat
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("the sunday is mapped to 1");
+                Console.WriteLine("choose number of days");
+                int din = Convert.ToInt32(Console.ReadLine());
+                switch (din)
+                {
+                    case 1:
+                        Console.WriteLine(Days.Sun);
+                        break;
+                    case 2:
+                        Console.WriteLine(Days.Mon);
+                        break;
+                    case 3:
+                        Console.WriteLine(Days.Tue);
+                        break;
+                    case 4:
+                        Console.WriteLine(Days.Wed);
+                        break;
+                    case 5:
+                        Console.WriteLine(Days.Thur);
+                        break;
+                    case 6:
+                        Console.WriteLine(Days.Fri);
+                        break;
+                    case 7:
+                        Console.WriteLine(Days.Sat);
+                        break;
+                }
+
+
+            }
+        }
+    }
+
